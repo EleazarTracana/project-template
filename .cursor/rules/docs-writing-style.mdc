@@ -1,0 +1,35 @@
+---
+description: Writing style for documentation, ADRs, and system overviews
+globs: docs/**/*.md
+alwaysApply: false
+---
+
+# Documentation Writing Style
+
+Documentation here is written for a person who has to make a decision — and for an agent that has
+to avoid making a bad one. That single goal sets the voice: conceptual first, narrative, honest
+about what we gave up.
+
+Lead with the rationale. A reader can recover the mechanics from code in five minutes; what they
+cannot recover is why this shape and not the obvious alternative. Go deep there, and reserve
+implementation detail for the places where it clarifies rather than clutters.
+
+Prefer flowing paragraphs over bullet lists. Bullets are for things that are genuinely a list —
+roles, statuses, links. When a bullet list is really three compressed sentences, write the three
+sentences. Avoid rigid Context / Decision / Rationale / Consequences scaffolding unless the
+document type requires it.
+
+Name the trade-offs. Every choice costs something, and a document that hides the cost is a
+document the next person will stop trusting. "The trade-off is…" and "we pay X to get Y" are the
+honest phrasings — use them, and never pretend a decision was free.
+
+Write living docs in the present tense, describing how the system behaves today. Do not narrate
+history in a living doc: no "we used to", no "this will change once". That belongs to an ADR or to
+the tracker. Use inclusive "we" for decisions the team owns.
+
+A few phrases earn their keep because they tell the reader what kind of sentence is coming. "The
+key insight is…" marks the central idea. "This is critical to understand" marks something easy to
+get wrong. "Now," turns toward a nuance. Use them when they are true, not as decoration.
+
+For a worked before-and-after rewrite in this voice, see
+`.cursor/skills/documentation-writing/references/writing-style.md`.

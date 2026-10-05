@@ -1,0 +1,39 @@
+---
+description: HARD GATE — code and tests are the contract; when a doc is allowed and where it goes
+alwaysApply: true
+---
+
+# Documentation Boundary (HARD GATE)
+
+Code and tests are the contract. A committed document is allowed only for what they cannot
+express: an accepted decision, cross-cutting meaning, the current behavior of a bounded context,
+or an operational path.
+
+Never commit transitional documentation — plans, roadmaps, phased rollouts, work-item narratives,
+status trackers, "when added" placeholders. Those live in the tracker or in chat.
+
+## Gate
+
+Answer in order. Stop at the first match.
+
+```
+Code, a test, a type, or the API schema already answers it?  → Write no doc
+Records a decision with alternatives?                        → docs/adl/####-{kebab-title}.md
+Step-by-step production operations?                          → docs/runbooks/{audience}/{scenario}.md
+Current behavior of a bounded context?                       → docs/domain/{module}/README.md
+Cross-cutting vocabulary many areas share?                   → docs/concepts/{kebab-topic}.md  (rare)
+Implementation plan or pending work?                         → Tracker — not the repo
+```
+
+Mirror source module names under `docs/domain/`. Max four levels deep from `docs/`.
+ADRs are immutable once accepted; the other three types are living and describe today.
+
+## Reject on sight
+
+Per-class or per-endpoint markdown. Field, filter, or operator tables copied from types or
+metadata. Prose that repeats what the IDE already shows. Migration narrative in a living doc.
+
+## Writing one?
+
+Load the `documentation-writing` skill. It carries the taxonomy, the voice, and the per-type
+checklists. This rule only decides *whether* and *where*.
