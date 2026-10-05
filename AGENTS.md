@@ -18,15 +18,6 @@ The skill is **self-contained**. It depends on no rule, convention file, or exte
 what makes it portable: copy the folder into any project, adjust the paths in its gate, and the
 discipline comes with it.
 
-## Rules
-
-| Rule | Scope | Purpose |
-|---|---|---|
-| [documentation](.cursor/rules/documentation.mdc) | Always on | Pointer only — reminds the agent to load the skill |
-
-That pointer holds no rules of its own. It exists so an agent editing `docs/` is reminded the skill
-exists, and it can be deleted without affecting the discipline.
-
 ## Before writing prose
 
 Follow the read order in [SKILL.md](.cursor/skills/documentation-writing/SKILL.md#read-order). Do

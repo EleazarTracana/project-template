@@ -7,17 +7,15 @@ both people and agents are writing in the repository.
 
 ```
 .cursor/
-├── skills/
-│   └── documentation-writing/
-│       ├── SKILL.md              # the gate, the taxonomy, the read order, the workflow
-│       └── references/
-│           ├── registers.md      # voice by doc type; the two registers, never mixed
-│           ├── voice-dna.md      # tone, signature phrases, length targets, worked rewrite
-│           ├── anti-patterns.md  # AI tells, invented taxonomy, transformation pairs
-│           ├── doc-taxonomy.md   # the four types, with per-type checklists
-│           └── adr-format.md     # ADR format, invariant blocks, content boundary
-└── rules/
-    └── documentation.mdc         # pointer only — "load the skill"; deletable
+└── skills/
+    └── documentation-writing/
+        ├── SKILL.md              # the gate, the taxonomy, the read order, the workflow
+        └── references/
+            ├── registers.md      # voice by doc type; the two registers, never mixed
+            ├── voice-dna.md      # tone, signature phrases, length targets, worked rewrite
+            ├── anti-patterns.md  # AI tells, invented taxonomy, transformation pairs
+            ├── doc-taxonomy.md   # the four types, with per-type checklists
+            └── adr-format.md     # ADR format, invariant blocks, content boundary
 
 docs/
 ├── adl/                          # architecture decision log; each file is one ADR
@@ -46,9 +44,9 @@ Everything is in the skill, and that is deliberate. A discipline split across an
 an on-demand skill has to repeat itself at the seam, and the two halves drift — which is the exact
 failure the discipline exists to prevent. One source of truth, loaded when the work starts.
 
-The `.cursor/rules/documentation.mdc` pointer is the only concession: it reminds an agent editing
-`docs/` that the skill exists. It carries no rules of its own, so there is nothing to drift. Delete
-it and the discipline is unaffected.
+There is no rules folder, and that is the point: a pointer file that only says "load the skill"
+earns nothing a line in `AGENTS.md` does not already earn, and a file whose purpose is not obvious
+from its contents is a file the next person has to investigate before they can delete it.
 
 Inside the skill there is one further split, and it is what makes the voice material portable.
 `SKILL.md` owns **taxonomy and gates** — folders, types, limits — which belong to a repository. The
@@ -62,7 +60,7 @@ elsewhere, and keep the voice.
 2. Adjust the paths in the skill's gate and classification table if your folder tree differs.
 3. Replace the contents of `docs/` with your own, keeping the folder shape.
 4. Rename `docs/domain/ordering/` to mirror a real module in your source tree.
-5. Optionally copy `.cursor/rules/documentation.mdc` and keep `AGENTS.md` as the registry.
+5. Keep `AGENTS.md`, pointing it at wherever the skill landed.
 
 The documentation under `docs/` is demonstrative. It describes a small fictional ordering and
 inventory system and exists to show what each type looks like when written correctly — the voice,
