@@ -1,0 +1,17 @@
+---
+description: Pointer — load the documentation-writing skill before writing committed markdown
+globs: docs/**/*.md
+alwaysApply: true
+---
+
+# Documentation
+
+Before creating or revising any committed markdown under `docs/`, load the
+`documentation-writing` skill at `.cursor/skills/documentation-writing/SKILL.md`.
+
+It carries the whole discipline: the hard gate on whether a document is allowed, the four committed
+types and their paths, the register and voice, and the per-type checklists.
+
+**This file is a pointer and nothing else.** It holds no rules of its own, so the skill stays the
+single source of truth and cannot drift from it. Deleting this file costs nothing but the automatic
+reminder — the skill is self-contained and works without it.

@@ -28,11 +28,11 @@ while drafting **and** when correcting a draft — the transformation pairs show
 
 | Avoid | Where it belongs |
 |---|---|
-| Paths, type names, registration snippets in an **ADR body** | A rule, a living doc, or code |
+| Paths, type names, registration snippets in an **ADR body** | A convention, a living doc, or code |
 | Sequence diagrams and service lists as **primary ADR content** | Implementation notes — not `docs/` |
 | Formula bullet tables posing as **architecture rationale** | Reference contract, collocated with code |
 | Implementation checklists in a committed doc | Tracker, chat, or tests |
-| Per-component markdown | Code metadata plus an authoring rule |
+| Per-component markdown | Code metadata plus an authoring convention |
 | Past-tense migration story in a living doc | An ADR, and only an ADR |
 | Session TODOs, "currently", "I think", "need to verify" | Transitional — never committed |
 | Multi-page *Alternatives rejected* essays | Short *Why not X?* subsections |
@@ -40,7 +40,7 @@ while drafting **and** when correcting a draft — the transformation pairs show
 ## Invented taxonomy
 
 Agents coin category labels that sound precise but are not team vocabulary. They read like internal
-jargon and then leak into folder names, ADR titles, and rules — where they are expensive to remove.
+jargon and then leak into folder names, ADR titles, and conventions — where they are expensive to remove.
 
 | Avoid, unless the codebase already uses it | Prefer |
 |---|---|

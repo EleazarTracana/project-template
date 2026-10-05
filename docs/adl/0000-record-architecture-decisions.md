@@ -65,5 +65,5 @@ record is abandoned. We accept the gaps; renumbering would break every inbound l
 
 ## References
 
-- `.cursor/rules/docs-boundary.mdc` — when a document is allowed at all
+- `.cursor/skills/documentation-writing/SKILL.md` — when a document is allowed at all
 - `.cursor/skills/documentation-writing/references/adr-format.md` — the format and content boundary

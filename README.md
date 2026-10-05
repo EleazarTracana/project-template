@@ -1,32 +1,31 @@
 # Project Template
 
 A starting point that ships one thing fully formed: a documentation discipline that holds up when
-both people and agents are writing in the repo.
+both people and agents are writing in the repository.
 
 ## What is here
 
 ```
 .cursor/
-├── rules/
-│   ├── docs-boundary.mdc        # HARD GATE — may I write this, and where does it go
-│   └── docs-writing-style.mdc   # the voice, scoped to docs/**/*.md
-└── skills/
-    └── documentation-writing/
-        ├── SKILL.md              # the gate, the taxonomy, the read order, the workflow
-        └── references/
-            ├── registers.md      # voice by doc type; the two registers, never mixed
-            ├── voice-dna.md      # tone, signature phrases, length targets, worked rewrite
-            ├── anti-patterns.md  # AI tells, invented taxonomy, transformation pairs
-            ├── doc-taxonomy.md   # the four types, with per-type checklists
-            └── adr-format.md     # ADR format, invariant blocks, content boundary
+├── skills/
+│   └── documentation-writing/
+│       ├── SKILL.md              # the gate, the taxonomy, the read order, the workflow
+│       └── references/
+│           ├── registers.md      # voice by doc type; the two registers, never mixed
+│           ├── voice-dna.md      # tone, signature phrases, length targets, worked rewrite
+│           ├── anti-patterns.md  # AI tells, invented taxonomy, transformation pairs
+│           ├── doc-taxonomy.md   # the four types, with per-type checklists
+│           └── adr-format.md     # ADR format, invariant blocks, content boundary
+└── rules/
+    └── documentation.mdc         # pointer only — "load the skill"; deletable
 
 docs/
-├── adl/                         # ADRs — immutable why
-├── concepts/                    # cross-cutting vocabulary (sparse)
-├── domain/{module}/             # current behavior of a bounded context
-└── runbooks/{audience}/         # production operations
+├── adl/                          # architecture decision log; each file is one ADR
+├── concepts/                     # cross-cutting vocabulary (sparse)
+├── domain/{module}/              # current behavior of a bounded context
+└── runbooks/{audience}/          # production operations
 
-AGENTS.md                        # rule and skill registry; read first
+AGENTS.md                         # skill registry; read first
 ```
 
 ## The idea
@@ -35,32 +34,38 @@ Documentation rots because repositories document what code already says. Two sou
 drift, and a drifted document is worse than no document — it misleads the next reader, human or
 agent.
 
-So the rule here is narrow: **code and tests are the contract**, and a committed document is
+So the discipline is narrow: **code and tests are the contract**, and a committed document is
 allowed only for the residue those cannot express — an accepted decision, cross-cutting meaning,
-the current behavior of a bounded context, or an operational path. Four types, a closed taxonomy, a
-gate that runs before anything is written.
+the current behavior of a bounded context, or an operational path. Four types, a closed taxonomy,
+and a gate that runs before anything is written. The gate's most common correct answer is *write
+nothing*.
 
-The separation between the rule and the skill is the part worth copying. The rule is always loaded,
-so it stays mechanical and cheap: a decision ladder and a reject list, nothing more. The skill
-loads only when someone actually writes, so it carries the depth — why the gate exists, what each
-type is for, the voice, the checklists. Mixing the two gives you an always-on rule nobody finishes
-reading.
+## Why it lives in one skill
 
-Inside the skill there is a second separation, and it is the one that makes the voice material
-portable. `SKILL.md` and the rules own **taxonomy and gates** — where files live, what types exist,
-what is forbidden. The references own **voice and intent** — how prose reads, which phrases earn
-their keep, which patterns are AI tells. Taxonomy is specific to a repository; voice is not. Swap
-the taxonomy when you adopt this into a project with a different folder tree, and keep the voice.
+Everything is in the skill, and that is deliberate. A discipline split across an always-on rule and
+an on-demand skill has to repeat itself at the seam, and the two halves drift — which is the exact
+failure the discipline exists to prevent. One source of truth, loaded when the work starts.
+
+The `.cursor/rules/documentation.mdc` pointer is the only concession: it reminds an agent editing
+`docs/` that the skill exists. It carries no rules of its own, so there is nothing to drift. Delete
+it and the discipline is unaffected.
+
+Inside the skill there is one further split, and it is what makes the voice material portable.
+`SKILL.md` owns **taxonomy and gates** — folders, types, limits — which belong to a repository. The
+references own **voice and intent** — how prose reads, which phrases earn their keep, which patterns
+are AI tells — which belong to nobody in particular. Swap the taxonomy when you adopt this
+elsewhere, and keep the voice.
 
 ## Using it
 
-1. Clone or copy `.cursor/` into your repo.
-2. Replace the contents of `docs/` with your own, keeping the folder shape.
-3. Rename `docs/domain/ordering/` to mirror a real module in your source tree.
-4. Keep `AGENTS.md` and register additional rules and skills there as you add them.
+1. Copy `.cursor/skills/documentation-writing/` into your repository. That alone is the discipline.
+2. Adjust the paths in the skill's gate and classification table if your folder tree differs.
+3. Replace the contents of `docs/` with your own, keeping the folder shape.
+4. Rename `docs/domain/ordering/` to mirror a real module in your source tree.
+5. Optionally copy `.cursor/rules/documentation.mdc` and keep `AGENTS.md` as the registry.
 
-The documentation in `docs/` is demonstrative. It describes a small fictional ordering and
+The documentation under `docs/` is demonstrative. It describes a small fictional ordering and
 inventory system and exists to show what each type looks like when written correctly — the voice,
 the length, where trade-offs go, and what each type deliberately omits. ADR 0001 and the concept
-doc are deliberately paired so you can see the same decision rendered once as a frozen record and
-once as a living explanation.
+document deliberately cover the same decision, so you can see it rendered once as a frozen record
+and once as a living explanation.

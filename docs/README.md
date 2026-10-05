@@ -3,6 +3,8 @@
 Four committed types live here, and nothing else. Code and tests carry the contract; these
 documents carry only what code and tests cannot express.
 
+`adl` is the architecture decision log; each file in it is one ADR.
+
 | Folder | Type | Answers | Mutable |
 |---|---|---|---|
 | `adl/` | ADR | Why is the boundary here? | No, once accepted |
@@ -15,11 +17,12 @@ deep from here.
 
 ## Before adding anything
 
-Run the gate in `.cursor/rules/docs-boundary.mdc`. Writing no document is a valid and frequently
-correct outcome — plans, roadmaps, status updates, and field tables all belong somewhere else.
+Load the `documentation-writing` skill and run its gate. Writing no document is a valid and
+frequently correct outcome — plans, roadmaps, status updates, and field tables all belong somewhere
+else.
 
-To write or revise one, load the `documentation-writing` skill. It carries the taxonomy, the voice,
-and the per-type checklists.
+The skill is self-contained: the gate, the taxonomy, the voice, and the per-type checklists all
+live inside it.
 
 ## About the content in this template
 

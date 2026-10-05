@@ -66,7 +66,7 @@ how short to keep rejected options, see the same file.
 **Mutable** Yes — it describes today.
 
 A concept doc earns its place when a word carries weight across several modules and neither the
-code nor a rule can teach it. That is rarer than it feels. Before writing one, check whether the
+code nor a convention can teach it. That is rarer than it feels. Before writing one, check whether the
 vocabulary actually appears in more than one bounded context; if it lives in one, it belongs in
 that module's README.
 

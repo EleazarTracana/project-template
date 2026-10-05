@@ -76,8 +76,8 @@ really three compressed sentences, write the three sentences.
 | Code block | Max ~30 lines, unless it replaces a diagram |
 
 Length spent on rationale is the only length that earns its place. If no trade-off is worth naming,
-that is a strong signal the decision was not a decision — and that this should be a rule, a test,
-or nothing at all.
+that is a strong signal the decision was not a decision — and that this should be a convention, a
+test, or nothing at all.
 
 ## Words
 
