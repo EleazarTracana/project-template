@@ -110,8 +110,9 @@ drain in time.
 ## Why this happens
 
 Claims hold stock and are released on payment, cancellation, or expiry. Expiry is the only one of
-the three that covers a checkout that simply stops, so when expiry falls behind, abandoned
-checkouts keep their claims and availability drops below physical stock with no sales to explain it.
+the three that covers a checkout stopping without resolution, so when expiry falls behind,
+abandoned checkouts keep their claims and availability drops below physical stock with no sales
+to explain it.
 
 See [inventory reservation](../../concepts/inventory-reservation.md) for the claim model and
 [ADR 0001](../../adl/0001-reserve-inventory-at-checkout.md) for why claims exist at all.

@@ -16,6 +16,32 @@ form does not transfer a mental model.
 The sections are scaffolding for the reader's benefit, not a form to complete. Inside each one,
 write prose.
 
+## Rule-shaped decisions
+
+When the decision is really a set of constraints the platform must preserve, state them as an
+explicit block rather than burying them in prose:
+
+```markdown
+Under these invariants:
+
+- Availability is computed, never stored
+- Exactly one place decides whether stock can be claimed
+- A claim always resolves — by payment, cancellation, or expiry
+```
+
+Invariants as bullets are correct here, because the reader needs to check their change against each
+one. The rationale underneath still reads as prose.
+
+## Rejected alternatives
+
+Keep them short. A *Why not X?* subsection of two or three sentences: the virtue the option had,
+and the one reason it lost.
+
+Resist the multi-page alternatives essay. Steelmanning past that point does not help the reader —
+it buries the decision, and it ages badly as the rejected option becomes less relevant. A reader
+who wants the full argument can reopen the discussion; a reader scanning the ADR needs to know the
+option was considered and why it failed.
+
 ## The boundary test
 
 An ADR captures **why** the platform decided something, never **how** it is implemented. Apply this

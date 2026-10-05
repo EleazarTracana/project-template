@@ -3,6 +3,10 @@
 Four committed types, each with a different job and a different bar. This file carries the detail
 the skill summarizes.
 
+All four speak the narrative register. Reference-contract material — formulas, rounding rules,
+field derivations — is a different register and does not live in `docs/` at all; see
+[registers.md](registers.md).
+
 ## Why exactly four
 
 The taxonomy is closed on purpose. Each type answers one reader question that code cannot:
@@ -39,7 +43,8 @@ types can find anything, and an agent that knows the four types cannot invent a 
 - [ ] It constrains how future components get built — if not, it is a one-time choice, not an ADR
 - [ ] It would survive a refactor that preserved the architectural intent
 - [ ] It is cross-cutting, not specific to one module's business rules
-- [ ] The alternatives section names a real rejected option, with its real cost
+- [ ] Rejected options appear as short *Why not X?* subsections, not as an essay
+- [ ] Each rejected option names the virtue it had and the one reason it lost
 - [ ] No type names, code blocks, file paths, schema names, queries, or config snippets
 - [ ] References link out without recapping the linked document's content
 
@@ -50,7 +55,8 @@ ADR that supersedes it and update the affected living docs. Editing an accepted 
 record of what was actually decided and when — which is the only thing an ADR is for.
 
 Content that fails the ADR bar still has a home: see
-[adr-format.md](adr-format.md#where-removed-content-goes).
+[adr-format.md](adr-format.md#where-removed-content-goes). For invariant-shaped decisions and for
+how short to keep rejected options, see the same file.
 
 ---
 

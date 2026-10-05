@@ -12,11 +12,13 @@ both people and agents are writing in the repo.
 │   └── docs-writing-style.mdc   # the voice, scoped to docs/**/*.md
 └── skills/
     └── documentation-writing/
-        ├── SKILL.md             # the conceptual model, workflow, review heuristics
+        ├── SKILL.md              # the gate, the taxonomy, the read order, the workflow
         └── references/
-            ├── doc-taxonomy.md  # the four types, with per-type checklists
-            ├── writing-style.md # the voice, with a worked before/after rewrite
-            └── adr-format.md    # ADR format and content boundary
+            ├── registers.md      # voice by doc type; the two registers, never mixed
+            ├── voice-dna.md      # tone, signature phrases, length targets, worked rewrite
+            ├── anti-patterns.md  # AI tells, invented taxonomy, transformation pairs
+            ├── doc-taxonomy.md   # the four types, with per-type checklists
+            └── adr-format.md     # ADR format, invariant blocks, content boundary
 
 docs/
 ├── adl/                         # ADRs — immutable why
@@ -43,6 +45,12 @@ so it stays mechanical and cheap: a decision ladder and a reject list, nothing m
 loads only when someone actually writes, so it carries the depth — why the gate exists, what each
 type is for, the voice, the checklists. Mixing the two gives you an always-on rule nobody finishes
 reading.
+
+Inside the skill there is a second separation, and it is the one that makes the voice material
+portable. `SKILL.md` and the rules own **taxonomy and gates** — where files live, what types exist,
+what is forbidden. The references own **voice and intent** — how prose reads, which phrases earn
+their keep, which patterns are AI tells. Taxonomy is specific to a repository; voice is not. Swap
+the taxonomy when you adopt this into a project with a different folder tree, and keep the voice.
 
 ## Using it
 

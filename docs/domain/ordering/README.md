@@ -13,7 +13,7 @@ other module is permitted to form its own opinion about whether stock is availab
 
 Everything that follows from a claim is also ours. Claims have a lifetime, and ordering is
 responsible for resolving them: converting them when payment completes, releasing them when a
-shopper abandons, and expiring them when a checkout simply stops. Expiry is the module's quietest
+shopper abandons, and expiring them when a checkout stops without resolving. Expiry is the module's quietest
 and most consequential job, because it is what keeps availability honest when checkouts die
 mid-flight.
 

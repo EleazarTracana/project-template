@@ -38,3 +38,15 @@ This split is deliberate and worth preserving as the repo grows:
 
 When a rule starts explaining concepts, move the concepts into the skill. When a skill starts
 gating behavior, move the gate into the rule.
+
+Inside the skill, the same discipline applies one level down. `SKILL.md` and the rules own taxonomy
+and gates; the references own voice and intent. Taxonomy belongs to this repository, voice does
+not — which is what makes the reference files portable to a project with a different folder tree.
+
+## Before writing prose
+
+Follow the read order in [SKILL.md](.cursor/skills/documentation-writing/SKILL.md#read-order). Do
+not draft from memory: pick the register first, then read the matching document under `docs/` as a
+live model, then audit the draft against
+[anti-patterns](.cursor/skills/documentation-writing/references/anti-patterns.md) before claiming
+the work is done.

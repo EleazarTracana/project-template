@@ -26,21 +26,30 @@ other is refused at the moment of commitment.
 A reservation is a claim with a lifetime, not a permanent decrement. An abandoned checkout returns
 its units.
 
+Under these invariants:
+
+- Availability is computed from stock minus live claims, never stored
+- Exactly one place in the system decides whether stock can be claimed
+- Every claim resolves — by payment, by cancellation, or by expiry
+
 ## Rationale
 
-Reserving at cart entry is the more intuitive option and we took it seriously. It has a real
-virtue: a shopper who adds the last unit is guaranteed to get it, so nobody is ever disappointed
-after committing. For a low-traffic catalogue that is close to free.
+We chose checkout because a cart is a browsing artifact, not an intention. Most carts are never
+completed, and the correlation runs the wrong way: the most desirable items are the ones most often
+added speculatively. Holding stock on cart entry locks up exactly the items under the most genuine
+demand, on behalf of shoppers who were never going to buy — the mechanism inverts precisely when it
+matters most.
 
-We rejected it because a cart is a browsing artifact, not an intention. Most carts are never
-completed, and the correlation runs the wrong way — the most desirable items are the ones most
-often added speculatively. Holding stock on cart entry means the items under the most genuine
-demand spend their day locked on behalf of shoppers who were never going to buy, while shoppers who
-would have bought see them as unavailable. The mechanism inverts exactly when it matters most.
+### Why not reserve at cart entry?
 
-We also considered a middle path: hold on cart entry, but with a short expiry. It fixes the worst
-of the lock-up but introduces something worse — availability that changes under the shopper without
-any action on their part, which is far harder to explain than a clean refusal.
+It is the intuitive option and it has a real virtue: a shopper who adds the last unit is guaranteed
+to get it. For a low-traffic store that is close to free. It lost because the lock-up scales with
+demand rather than with sales, so the busiest items are the ones it serves worst.
+
+### Why not hold at cart entry with a short expiry?
+
+It fixes the worst of the lock-up. It lost because it introduces something harder to explain than a
+clean refusal: availability that changes under the shopper without any action on their part.
 
 Now, our choice does open a window. Between the moment availability is shown and the moment it is
 committed, stock can go. We close that at the write rather than by reserving earlier: the
